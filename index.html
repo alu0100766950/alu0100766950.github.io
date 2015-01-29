@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="NodeJS : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>NodeJS</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/alu0100766950/NodeJS">View on GitHub</a>
+
+          <h1 id="project_title">NodeJS</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/alu0100766950/NodeJS/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/alu0100766950/NodeJS/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="instalación-y-uso-de-nodejs" class="anchor" href="#instalaci%C3%B3n-y-uso-de-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalación y uso de Node.js</h1>
+
+<h2>
+<a id="paso-a-seguir-para-la-instalación" class="anchor" href="#paso-a-seguir-para-la-instalaci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paso a seguir para la instalación</h2>
+
+<ol>
+<li>Accederemos a la página web de <a href="http://nodejs.org/" title="Enlace Node.js">Node.js</a>
+</li>
+<li>Una vez dentro de la web clickaremos encima de la opción <strong>INSTALL</strong>
+
+<ul>
+<li><img src="http://i.gyazo.com/029e4e900a28224fcc986f3e8678b6c7.png" alt="Imagen_nodejs.org" title="Imagen de INSTALL"></li>
+</ul>
+</li>
+<li>Una vez realizado esto se nos descargará un fichero <strong>comprimido</strong> (<em>extensión .tar.gz</em>).
+
+<ul>
+<li><img src="http://i.gyazo.com/0df7b6a139552d04ab6c10c16f8d6d67.png" alt="Imagen_fichero" title="Imagen del fichero"></li>
+</ul>
+</li>
+<li>Extraemos este fichero y nos encontramos con lo siguiente:
+
+<ul>
+<li><img src="http://i.gyazo.com/334e835291d3bdc13c922d3033a30985.png" width="760" height="600"></li>
+</ul>
+</li>
+<li>
+<p>Para instalar Node.js en nuestro ordenador personal seguiremos las instrucciones que se nos aportan en el fichero README.md. Para facilitar la lectura del fichero escrito en MarkDown podemos hacer uso de <a href="http://daringfireball.net/projects/markdown/dingus" title="Interprete MarkDown">este</a> "interprete" online de MarkDown. Analicemos los pasos a seguir para cada sistema operativo:</p>
+
+<ul>
+<li>
+<p>Encontramos una serie de requisitos que serán únicamente aplicables a sistemas Unix. Estos son:</p>
+
+<ol>
+<li>Tener instalado GCC 4.2 o superior.<a href="http://manualinux.exofire.net/gcc.html%20(Link%20GCC)">Link de instalación</a>
+</li>
+<li>Tener instalado Python 2.6 o 2.7. <a href="http://www.pythondiario.com/2013/05/como-instalar-python-en-linux.html%20(Link%20Python)">Link de instalación</a>
+</li>
+<li>
+<p>Tener instalado GNU Make 3.81 o superior.</p>
+
+<ul>
+<li><code>sudo apt-get install make</code></li>
+</ul>
+
+<blockquote>
+<p><em>He decidido aportar el código directamente ya que la información que puede ser encontrada por internet es un tanto confusa</em></p>
+</blockquote>
+</li>
+<li>libexecinfo (Únicamente para sistemas FreeBSD y OpenBSD). </li>
+</ol>
+</li>
+<li>
+<p>Sistemas Unix/Macintosh: Ejecutaremos una serie de comandos dentro de la carpeta en la que hemos extraido nuestro fichero .tar.gz:</p>
+
+<ol>
+<li>
+<code>./configure</code>
+
+<ul>
+<li><img src="http://i.gyazo.com/a132a7f5d51cfcfd4d4e9f01eb9119c2.png" alt="configure" title="Imagen Configure"></li>
+</ul>
+</li>
+<li>
+<p><code>make</code></p>
+
+<blockquote>
+<p><em>Este proceso puede durar unos minutos,</em> <strong>no desesperes!</strong> </p>
+</blockquote>
+</li>
+<li>
+<p><code>make install</code></p>
+
+<blockquote>
+<p><em>Puede ser necesario ejecutar este comando como</em> <strong>superusuario:</strong> <code>sudo make install</code></p>
+</blockquote>
+</li>
+<li>
+<p>Excepciones:</p>
+
+<ul>
+<li>Puede darse el caso de que nuestro binario de Python esté situado en una ubicación no standard o tiene un nombre que no se adapta al standard. En este caso procederemos de la siguiente manera:
+
+<ol>
+<li><code>export PYTHON=/path/to/python</code></li>
+<li><code>$PYTHON ./configure</code></li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Sistemas Windows
+
+<ol>
+<li><code>vcbuild.bat</code></li>
+<li>Puede también descargar los binarios preconstruidos para varios sistemas operativos desde esta <a href="http://nodejs.org/download/" title="Web Descargas">web</a>
+
+<ul>
+<li>Los instaladores de Windows y OS X le pediran una ubicación a en la que instalarse. Los archivos comprimidos pueden ser extraidos a un directorio local mediante:
+
+<ul>
+<li><code>tar xzf /path/to/node-&lt;version&gt;-&lt;platform&gt;-&lt;arch&gt;.tar.gz</code></li>
+</ul>
+</li>
+<li>O en todo el sistema con:
+
+<ul>
+<li><code>cd /usr/local &amp;&amp; tar --strip-components 1 -xzf /path/to/node-&lt;version&gt;-&lt;platform&gt;-&lt;arch&gt;.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="método-de-uso" class="anchor" href="#m%C3%A9todo-de-uso" aria-hidden="true"><span class="octicon octicon-link"></span></a>Método de uso</h2>
+
+<ol>
+<li>Para arrancar los tests:
+
+<ul>
+<li>Unix/Macintosh:
+
+<ul>
+<li><code>make test</code></li>
+</ul>
+</li>
+<li>Windows:
+
+<ul>
+<li><code>vcbuild.bat test</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Para construir la documentación:
+
+<ul>
+<li><code>make doc</code></li>
+</ul>
+</li>
+<li>Para acceder a la documentación:
+
+<ul>
+<li><code>man doc/node.1</code></li>
+</ul>
+</li>
+</ol>
+
+<p>A continuación se adjunta una imagen de su utilización:
+<img src="http://i.gyazo.com/c130416a11a44264fa421a9a2679a524.png" width="760" height="600"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">NodeJS maintained by <a href="https://github.com/alu0100766950">alu0100766950</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
