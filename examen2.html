@@ -48,7 +48,7 @@ var isAjaxRequest = req.xhr;
 ...
 }</code></pre>
 <h2 id="ajax-2"><span class="header-section-number">4.2</span> Ajax 2</h2>
-<p>Codigo JavaScript * req.query * Cuando el servidor responde y los datos llegan * La respuesta del servidor * El formato en que el cliente requiere las respuestas</p>
+<p>Codigo JavaScript <b>req.query</b> Cuando el servidor responde y los datos llegan <b>La respuesta del servidor</b> El formato en que el cliente requiere las respuestas</p>
 <h1 id="underscorearrow_up"><span class="header-section-number">5</span> Underscore<a href="#indice"><img src="img/Arrow.gif"></a></h1>
 <h2 id="underscore-1"><span class="header-section-number">5.1</span> Underscore 1</h2>
 <p>Argumentos: * El template en forato string * Los demas argumentos son opcionales. En caso de no pasarle mas argumentos, el template nos devolvera una funcion y ya mas tarde se instanciara. (Esto forma parte de la programacion funcional. <strong>Mirar Haskell Curry</strong>) ##Underscore 2 Diferencias: * <strong>&lt;% ... %&gt;</strong> :arrow_right: Solamente evalua en JavaScript * <strong>&lt;%= ... %&gt;</strong> :arrow_right: Se evalua lo que esta dentro como codigo JavaScript y el resultado se interpola. * <strong>&lt;%- ... %&gt;</strong> :arrow_right: Igual que el de arriba pero ademas se pasa un filtro para escapar los caracteres especiales que puedan interferir con el lenguaje HTML.</p>
@@ -124,7 +124,9 @@ escape: /\{\{-.*?\}\}/gim
 </ul>
 <h1 id="conceptos-de-gramaticasarrow_up"><span class="header-section-number">9</span> Conceptos de Gramaticas<a href="#indice"><img src="img/Arrow.gif"></a></h1>
 <h2 id="conceptos-de-gramaticas-1"><span class="header-section-number">9.1</span> Conceptos de Gramaticas 1</h2>
-<p><span class="math">\(V_{i+1} = \\{wv: w \in V_{i} \land v \in V\\}\)</span></p>
+<p><span class="math">
+\(V_{i+1} = \\{wv: w \in V_{i} \land v \in V\\}\)
+</span></p>
 <h2 id="conceptos-de-gramaticas-2"><span class="header-section-number">9.2</span> Conceptos de Gramaticas 2</h2>
 <p>Cuádrupla <span class="math">\(G = (N,T,S,P)\)</span> donde:</p>
 <ul>
