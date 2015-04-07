@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="procesadores-de-lenguajes-examen-2"><span class="header-section-number">1</span> Procesadores de Lenguajes Examen 2</h1>
+<h1 id="indice"><span class="header-section-number">2</span> Indice</h1>
+<ul>
+<li><a href="#jqueryarrow_up">JQuery</a></li>
+<li><a href="#ajaxarrow_up">Ajax</a></li>
+<li><a href="#underscorearrow_up">Underscore</a></li>
+<li><a href="#coffeescriptarrow_up">CoffeeScript</a></li>
+<li><a href="#local-storagearrow_up">Local Storage</a></li>
+<li><a href="#herokuarrow_up">Heroku</a></li>
+<li><a href="#analisis-lexicoarrow_up">Analisis Lexico</a></li>
+<li><a href="#conceptos-de-gramaticasarrow_up">Conceptos de Gramaticas</a></li>
+<li><a href="#jadearrow_up">Jade</a></li>
+<li><a href="#mathjaxarrow_up">MathJax</a></li>
+</ul>
+<h1 id="jqueryarrow_up"><span class="header-section-number">3</span> JQuery<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<ol style="list-style-type: decimal">
+<li>Falso</li>
+<li>$</li>
+<li>Todos los elementos div</li>
+<li>Falso, solo usa HTML</li>
+<li>$('p').css('background-color','red')</li>
+<li>Todos los div con clase intro</li>
+<li>hide</li>
+<li>css</li>
+<li>ajax</li>
+<li>$('div').height(100)</li>
+<li>$().ready</li>
+<li>$().noConflict</li>
+<li>$().toggle</li>
+<li>Selecciona todos los descendientes (de clase head) de los div con id=&quot;intro&quot;.</li>
+<li>No</li>
+</ol>
+<h1 id="ajaxarrow_up"><span class="header-section-number">4</span> Ajax<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="ajax-1"><span class="header-section-number">4.1</span> Ajax 1</h2>
+<pre><code>app.get(’/chuchu’, function (req, res) {
+var isAjaxRequest = req.xhr;
+...
+}</code></pre>
+<h2 id="ajax-2"><span class="header-section-number">4.2</span> Ajax 2</h2>
+<p>Codigo JavaScript * req.query * Cuando el servidor responde y los datos llegan * La respuesta del servidor * El formato en que el cliente requiere las respuestas</p>
+<h1 id="underscorearrow_up"><span class="header-section-number">5</span> Underscore<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="underscore-1"><span class="header-section-number">5.1</span> Underscore 1</h2>
+<p>Argumentos: * El template en forato string * Los demas argumentos son opcionales. En caso de no pasarle mas argumentos, el template nos devolvera una funcion y ya mas tarde se instanciara. (Esto forma parte de la programacion funcional. <strong>Mirar Haskell Curry</strong>) ##Underscore 2 Diferencias: * <strong>&lt;% ... %&gt;</strong> :arrow_right: Solamente evalua en JavaScript * <strong>&lt;%= ... %&gt;</strong> :arrow_right: Se evalua lo que esta dentro como codigo JavaScript y el resultado se interpola. * <strong>&lt;%- ... %&gt;</strong> :arrow_right: Igual que el de arriba pero ademas se pasa un filtro para escapar los caracteres especiales que puedan interferir con el lenguaje HTML.</p>
+<h2 id="underscore-3"><span class="header-section-number">5.2</span> Underscore 3</h2>
+<pre><code>_.templateSettings = {
+interpolate: /\{\{=.*\}\}/gim,
+evaluate: /\{\{.*?\}\}/gim
+escape: /\{\{-.*?\}\}/gim
+}</code></pre>
+<h1 id="local-storagearrow_up"><span class="header-section-number">6</span> Local Storage<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="local-storage-1"><span class="header-section-number">6.1</span> Local Storage 1</h2>
+<p>La mejor forma de entender por qué es necesario el localStorage es indicando los tres grandes problemas de las cookies:</p>
+<ol style="list-style-type: decimal">
+<li>Espacio limitado: Una cookie sólo puede ocupar 4kb de espacio. Es por eso que las cookies suelen utilizarse sólo para almacenar un hash o un identificador que será utilizado por el servidor para identificar la visita.</li>
+<li><p>Cada vez que se realiza una petición al servidor, toda la información que está almacenada en las cookies es enviada y también es recibida nuevamente con la respuesta del servidor. O sea, en los intercambios de información entre el navegador web y el servidor siempre van pegadas las cookies.</p></li>
+<li><p>Las cookies tienen una caducidad. Y aquí viene localStorage a solucionarlos la vida!</p></li>
+<li><p>Espacio menos limitado: localStorage puede ocupar entre 5 y 10MB dependiendo del navegador web. Con 5 o 10 megas ya podemos tener algo más de información</p></li>
+<li><p>La información almacenada con localStorage no es enviada al servidor en cada petición. No existe una caducidad para localStorage, la información quedará almacenada hasta que se elimine expresamente. Aunque se cierre el navegador.</p></li>
+</ol>
+<p>Lo sé, una cookie tiene caducidad, pero le puedes poner que caduque dentro de 5 años… vale, sí… pero caduca, con localStorage nos olvidamos de tener que guardar la cookie aumentando el tiempo de caducidad.</p>
+<h2 id="local-storage-2"><span class="header-section-number">6.2</span> Local Storage 2</h2>
+<p>Sin embargo, que la información persista en el tiempo, no siempre es una buena idea. A veces lo que interesa es que la información se elimina una vez se cierre el navegador. Para estos casos, en vez de utilizar localStorage, se debe usar sessionStorage.</p>
+<p>El sessionStorage es exactamente igual que localStorage, pero con la salvedad de que una vez cerrado el navegador se pierde la información, todo lo demás es lo mismo. Si se quiere trabajar con sessionStorage, sólo hay que coger todo el código de este artículo y donde pone localStorage cambiarlo por sessionStorage.</p>
+<h2 id="local-storage-3"><span class="header-section-number">6.3</span> Local Storage 3</h2>
+<ol style="list-style-type: decimal">
+<li>Siguiendo estas reglas, un navegador web permite que scripts contenidos en una página acceda a datos en otra, pero sólo si ambas comparten el mismo origen. Un origen se define como la combinación del esquema URI, el nombre de dominio y número de puerto.</li>
+<li>El acceso a los datos almacenados en el navegador, tales como los del localStorage, se encuentra separado por origen. Cada origen tiene su propio almacenamiento individual, y el JavaScript en un origen no puede leer o escribir en el espacio de otro origen.</li>
+</ol>
+<h2 id="local-storage-4"><span class="header-section-number">6.4</span> Local Storage 4</h2>
+<ol style="list-style-type: decimal">
+<li>localStorage.setItem(‘chuchu’, chuchu)</li>
+<li>var chuchu = localStorage.getItem(‘chuchu’)</li>
+</ol>
+<h2 id="local-storage-5"><span class="header-section-number">6.5</span> Local Storage 5</h2>
+<p>localStorage.removeItem(‘chuchu’)</p>
+<h1 id="herokuarrow_up"><span class="header-section-number">7</span> Heroku<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="heroku-1"><span class="header-section-number">7.1</span> Heroku 1</h2>
+<p><code>heroku login</code></p>
+<h2 id="heroku-2"><span class="header-section-number">7.2</span> Heroku 2</h2>
+<p><code>heroku create [&lt;nombre&gt;]</code></p>
+<h2 id="heroku-3"><span class="header-section-number">7.3</span> Heroku 3</h2>
+<p><code>heroku</code></p>
+<h2 id="heroku-4"><span class="header-section-number">7.4</span> Heroku 4</h2>
+<p><code>git push heroku master</code></p>
+<h2 id="heroku-5"><span class="header-section-number">7.5</span> Heroku 5</h2>
+<p><code>git push heroku tutu:master</code></p>
+<h2 id="heroku-6"><span class="header-section-number">7.6</span> Heroku 6</h2>
+<p><code>heroku open</code></p>
+<h2 id="heroku-7"><span class="header-section-number">7.7</span> Heroku 7</h2>
+<p><code>&lt;nombre&gt;.herokuapp.com</code></p>
+<h2 id="heroku-8"><span class="header-section-number">7.8</span> Heroku 8</h2>
+<p><code>heroku logs</code></p>
+<h2 id="heroku-9"><span class="header-section-number">7.9</span> Heroku 9</h2>
+<p>Procfile</p>
+<h2 id="heroku-10"><span class="header-section-number">7.10</span> Heroku 10</h2>
+<p>package.json</p>
+<h2 id="heroku-11"><span class="header-section-number">7.11</span> Heroku 11</h2>
+<p>Con foreman. <code>foreman start</code></p>
+<h1 id="analisis-lexicoarrow_up"><span class="header-section-number">8</span> Analisis Lexico<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="analisis-lexico-1"><span class="header-section-number">8.1</span> Analisis Lexico 1</h2>
+<ol style="list-style-type: decimal">
+<li><p>Comprueba que el último índice no casado por la regex sea igual al siguiente casado por la misma regex sobre str; es decir, que desde el lugar lastIndex hasta el primero que case en str, no hay ningún elemento. <br> En caso de ser así, devuelve m (el array del matching), y en caso contrario, null. <br> <strong><em>ES DECIR:</em></strong> <br> Teniendo en cuenta que se ejecute todo el tiempo sobre el mismo str, devuelve el matching en caso de que justo el elemento siguiente case, si hay <strong>ALGO</strong> que no case, devuelve null. <br><strong>cadena: tuntu <br> regex = /tu/g <br>tu index: 0 // con exec <br>tu index: 3<br>tu index: 0 // con bexec<br>null</strong></p></li>
+<li><p><code>null</code> <br> <code>[ “DBBD”, “BB”, “D”, index: 7, input: “dBdXXXXDBBD” ]</code></p></li>
+</ol>
+<h2 id="analisis-lexico-2"><span class="header-section-number">8.2</span> Analisis Lexico 2</h2>
+<ul>
+<li><code>var WHITES = /\s+/g;</code></li>
+<li><code>var ID = /[a-zA-Z_]\w*/g;</code></li>
+<li><code>var STRING = /('(\\.|[^'])*'|&quot;(\\.|[^&quot;])*&quot;)/g;</code></li>
+<li><code>var ONELINECOMMENT = /\/\/.*/g;</code></li>
+<li><code>var MULTIPLELINECOMMENT = /\/[*](.|\n)*?[*]\//g;</code></li>
+<li><code>var ONECHAROPERATORS = /([-+*\/=()&amp;|;:,&lt;&gt;{}[\]])/g;</code></li>
+</ul>
+<h1 id="conceptos-de-gramaticasarrow_up"><span class="header-section-number">9</span> Conceptos de Gramaticas<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="conceptos-de-gramaticas-1"><span class="header-section-number">9.1</span> Conceptos de Gramaticas 1</h2>
+<p><span class="math">\(V_{i+1} = \\{wv: w \in V_{i} \land v \in V\\}\)</span></p>
+<h2 id="conceptos-de-gramaticas-2"><span class="header-section-number">9.2</span> Conceptos de Gramaticas 2</h2>
+<p>Cuádrupla <span class="math">\(G = (N,T,S,P)\)</span> donde:</p>
+<ul>
+<li>N es un conjunto finito de símbolos no terminales (variables).</li>
+<li>T es un conjunto finito de símbolos terminales (constantes), disjunto con N.</li>
+<li>S es un símbolo distinguido de N, el símbolo inicial.</li>
+<li>P es un conjunto finito de reglas de producción, cada una de la forma:</li>
+</ul>
+<p><span class="math">\((N \cup T)^\ast N(N \cup T)^\ast \to (N \cup T)^\ast\)</span></p>
+<h2 id="conceptos-de-gramaticas-3"><span class="header-section-number">9.3</span> Conceptos de Gramaticas 3</h2>
+<p>Sea <span class="math">\(G = (N,T,P,S)\)</span> una gramática, y sean α, β, δ, φ, ρ, ... palabras de <span class="math">\(\sum^\ast\)</span> . Entonces: * β se deriva de α en un paso de derivación, y lo denotamos con <span class="math">\(α \Rightarrow β\)</span> si existen dos cadenas <span class="math">\(\Phi_1, \Phi_2 \in \sum^\ast\)</span>, y una producción δ → ρ tales que <span class="math">\(α = \Phi_1 δ \Phi_2\)</span> , y <span class="math">\(β = \Phi_1 ρ \Phi_2\)</span></p>
+<ul>
+<li><p>Notamos con <span class="math">\(\Rightarrow^\ast\)</span> al cierre reflexivo y transitivo de <span class="math">\(\Rightarrow\)</span>. Es decir <span class="math">\(α \Rightarrow^\ast β\)</span> denota a una secuencia de derivaciones en un número finito de pasos desde α hasta β.</p></li>
+<li><p><span class="math">\(x \in \sum^\ast\)</span> es una forma sentencial de <span class="math">\(G\)</span>, si puede obtenerse la siguiente secuencia de derivaciones <span class="math">\(S \Rightarrow^\ast x\)</span> . En el caso particular de que <span class="math">\(x \in T^\ast\)</span> se dice que x es una sentencia</p></li>
+<li><p>Se denomina lenguaje formal generado por G al conjunto <span class="math">\(L(G) = \\{ x \in T^\ast | S \Rightarrow^\ast x\\}\)</span></p></li>
+</ul>
+<h2 id="conceptos-de-gramaticas-4"><span class="header-section-number">9.4</span> Conceptos de Gramaticas 4</h2>
+<p>Según el tipo de Gramática se generará un lenguaje distinto:</p>
+<ul>
+<li>Lenguajes Recursivamente Enumerables:<span class="math">\(P = \{ (u \to v) | u = xAy; u \in \sum^+; v,x,y \in \sum^\ast; A \in N\}\)</span></li>
+<li>Lenguajes Dependientes del Contexto: <span class="math">\(P = \\{ (S \to \lambda) o (xAy \to xvy) | v \in \sum^+ ; x,y \in \sum^\ast ; A \in N\\}\)</span></li>
+<li>Lenguajes Independientes del Contexto:<span class="math">\(P = \\{ (S \to \lambda) o (A \to v) | v \in \sum^+; A \in N\\}\)</span></li>
+<li>Lenguajes Regulares:
+<ul>
+<li>Lineales por la derecha: <span class="math">\(P = \\{ (S \to \lambda) o (A \to aB) o (A \to a) | a \in T; A,B \in N\\}\)</span></li>
+<li>Lineales por la izquierda: <span class="math">\(P = \\{ (S \to \lambda) o (A \to Ba) o (A \to a) | a \in T; A,B \in N\\}\)</span></li>
+</ul></li>
+</ul>
+<h2 id="conceptos-de-gramaticas-5"><span class="header-section-number">9.5</span> Conceptos de Gramaticas 5</h2>
+<p>Estructura jerárquica donde donde partiendo de la raíz, los hijos de cada nodo son posibles derivaciones de la gramática.</p>
+<h2 id="conceptos-de-gramaticas-6"><span class="header-section-number">9.6</span> Conceptos de Gramaticas 6</h2>
+<h2 id="conceptos-de-gramaticas-7"><span class="header-section-number">9.7</span> Conceptos de Gramaticas 7</h2>
+<h2 id="conceptos-de-gramaticas-8"><span class="header-section-number">9.8</span> Conceptos de Gramaticas 8</h2>
+<h2 id="conceptos-de-gramaticas-9"><span class="header-section-number">9.9</span> Conceptos de Gramaticas 9</h2>
+<h1 id="coffeescriptarrow_up"><span class="header-section-number">10</span> CoffeeScript<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="coffee-1"><span class="header-section-number">10.1</span> Coffee 1</h2>
+<pre><code>fact = (x) -&gt;
+    return 1 if x &lt;= 1
+    x * fact x - 1
+
+alert fact(5)</code></pre>
+<h2 id="coffee-2"><span class="header-section-number">10.2</span> Coffee 2</h2>
+<pre><code>container = &quot;bucket&quot;
+liquid = &quot;wine&quot;
+x = &quot;Filling the #{container} with #{liquid}&quot;</code></pre>
+<h2 id="coffee-3"><span class="header-section-number">10.3</span> Coffee 3</h2>
+<pre><code>outer = 1
+changeNumbers = -&gt;
+    inner = -1
+    outer = 10
+    inner = changeNumbers()</code></pre>
+<p><strong>=</strong></p>
+<pre><code>var changeNumbers, outer;
+
+outer = 1;
+
+changeNumbers = function() {
+  var inner;
+  inner = -1;
+  outer = 10;
+  return inner = changeNumbers();
+};</code></pre>
+<h2 id="coffee-4"><span class="header-section-number">10.4</span> Coffee 4</h2>
+<p>El (n...) significa que tendremos un numero aleatorio de argumentos que se almacenaran en un array. En este caso la funcion retornara un array con todos los argumentos que se le pasemos.</p>
+<h2 id="coffee-5"><span class="header-section-number">10.5</span> Coffee 5</h2>
+<pre><code>max is 10
+ida is 9
+tim is 11</code></pre>
+<pre><code>((x)-&gt;x*x*x)(y) for y in [1..10] when y % 2 == 1
+f = (x)-&gt;x*x*x
+a = f(y) for y in [1..10] when y % 2 == 1
+alert(a)</code></pre>
+<h2 id="coffee-6"><span class="header-section-number">10.6</span> Coffee 6</h2>
+<p>Funcion que suma los elementos del propio array. (:: se traduce como propotype). <span class="citation">@reduce</span> recibe como parametro una funcion y plaica esa funcion a los elementos del array.</p>
+<pre><code>Array::sum = -&gt; @reduce ((a, b) -&gt; a + b)
+a = [1,2,3]
+alert(a.sum()) // 6</code></pre>
+<h1 id="jadearrow_up"><span class="header-section-number">11</span> Jade<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="jade-1"><span class="header-section-number">11.1</span> Jade 1</h2>
+<pre><code>#content
+    .block
+        input#bar.foo1.foo2</code></pre>
+<h2 id="jade-2"><span class="header-section-number">11.2</span> Jade 2</h2>
+<pre><code>Hace que se interprete todo lo que esta indentado en p como parrafo.</code></pre>
+<h2 id="jade-3"><span class="header-section-number">11.3</span> Jade 3</h2>
+<pre><code>* li=name crea un li con todos los caracteres especiales escapados.
+* li!=name crea un li con los caraceteres especiales no escapados.</code></pre>
+<h2 id="jade-4"><span class="header-section-number">11.4</span> Jade 4</h2>
+<p>El caso es el mismo que en el <a href="#jade-3">Ejercicio 3</a> con # se escapan los caracteres especiales y con ! no se escapan. ##Jade 5 <code>input(type='text' placeholder='hola')</code></p>
+<h1 id="mathjaxarrow_up"><span class="header-section-number">12</span> MathJax<a href="#indice"><img src="img/Arrow.gif"></a></h1>
+<h2 id="mathjax-1"><span class="header-section-number">12.1</span> MathJax 1</h2>
+<pre><code>When $a \ne{} 0$ there are two solutions to $ax^2+bx+c=0$ and they are $ x ={ -b\pm \sqrt{b^2-4ac} \over 2a}$</code></pre>
+</body>
+</html>
