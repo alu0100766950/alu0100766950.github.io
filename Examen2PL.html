@@ -1168,20 +1168,358 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>README</title></head><body><article class="markdown-body"><h1 id="start-bootstrap-landing-page"><a href="http://startbootstrap.com/">Start Bootstrap</a> - <a href="http://startbootstrap.com/template-overviews/landing-page/">Landing Page</a></h1>
-<p><a href="http://startbootstrap.com/template-overviews/landing-page/">Landing Page</a> is a multipurpose landing page template for <a href="http://getbootstrap.com/">Bootstrap</a> created by <a href="http://startbootstrap.com/">Start Bootstrap</a>.</p>
-<h2 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started</h2>
-<p>To use this template, choose one of the following options to get started:<br />
-<em> Download the latest release on Start Bootstrap<br />
-</em> Fork this repository on GitHub</p>
-<h2 id="bugs-and-issues"><a name="user-content-bugs-and-issues" href="#bugs-and-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bugs and Issues</h2>
-<p>Have a bug or an issue with this template? <a href="https://github.com/IronSummitMedia/startbootstrap-landing-page/issues">Open a new issue</a> here on GitHub or leave a comment on the <a href="http://startbootstrap.com/template-overviews/landing-page/">template overview page at Start Bootstrap</a>.</p>
-<h2 id="creator"><a name="user-content-creator" href="#creator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creator</h2>
-<p>Start Bootstrap was created by and is maintained by <strong>David Miller</strong>, Managing Parter at <a href="http://www.ironsummitmedia.com/">Iron Summit Media Strategies</a>.</p>
+<title>Examen2PL</title></head><body><article class="markdown-body"><h1 id="procesadores-de-lenguajes-examen-2"><a name="user-content-procesadores-de-lenguajes-examen-2" href="#procesadores-de-lenguajes-examen-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Procesadores de Lenguajes Examen 2</h1>
+<h1 id="indice"><a name="user-content-indice" href="#indice" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Indice</h1>
 <ul>
-<li><a href="https://twitter.com/davidmillerskt">https://twitter.com/davidmillerskt</a></li>
-<li><a href="https://github.com/davidtmiller">https://github.com/davidtmiller</a></li>
+<li><a href="#jquery">JQuery</a></li>
+<li><a href="#ajax">Ajax</a></li>
+<li><a href="#underscore">Underscore</a></li>
+<li><a href="#local-storage">Local Storage</a></li>
+<li><a href="#heroku">Heroku</a></li>
+<li><a href="#analisis-lexico">Analisis Lexico</a></li>
+<li><a href="#conceptos-de-gramaticas">Conceptos de Gramaticas</a></li>
+<li><a href="#analisis-descendente-predictivo">Analisis Descendente Predictivo</a></li>
+<li><a href="#coffeescript">CoffeeScript</a></li>
+<li><a href="#jade">Jade</a></li>
+<li><a href="#mathjax">MathJax</a></li>
 </ul>
-<p>Start Bootstrap is based on the <a href="http://getbootstrap.com/">Bootstrap</a> framework created by <a href="https://twitter.com/mdo">Mark Otto</a> and <a href="https://twitter.com/fat">Jacob Thorton</a>.</p>
-<h2 id="copyright-and-license"><a name="user-content-copyright-and-license" href="#copyright-and-license" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Copyright and License</h2>
-<p>Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the <a href="https://github.com/IronSummitMedia/startbootstrap-landing-page/blob/gh-pages/LICENSE">Apache 2.0</a> license.</p></article></body></html>
+<h1 id="jquery"><a name="user-content-jquery" href="#jquery" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>JQuery<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<ol>
+<li>Falso</li>
+<li>$</li>
+<li>Todos los elementos div</li>
+<li>Falso, solo usa HTML</li>
+<li>$(&lsquo;p&rsquo;).css(&lsquo;background-color&rsquo;,&rsquo;red&rsquo;)</li>
+<li>Todos los div con clase intro</li>
+<li>hide</li>
+<li>css</li>
+<li>ajax</li>
+<li>$(&lsquo;div&rsquo;).height(100)</li>
+<li>$().ready</li>
+<li>$().noConflict</li>
+<li>$().toggle</li>
+<li>Selecciona todos los descendientes (de clase head) de los div con id=&rdquo;intro&rdquo;.</li>
+<li>No</li>
+</ol>
+<h1 id="ajax"><a name="user-content-ajax" href="#ajax" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ajax<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="ajax-1"><a name="user-content-ajax-1" href="#ajax-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ajax 1</h2>
+<div class="codehilite"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="err">’</span><span class="o">/</span><span class="nx">chuchu</span><span class="err">’</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">isAjaxRequest</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">xhr</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="ajax-2"><a name="user-content-ajax-2" href="#ajax-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ajax 2</h2>
+<p>Codigo JavaScript</p>
+<ul>
+<li>req.query</li>
+<li>Cuando el servidor responde y los datos llegan</li>
+<li>La respuesta del servidor</li>
+<li>El formato en que el cliente requiere las respuestas</li>
+</ul>
+<h1 id="underscore"><a name="user-content-underscore" href="#underscore" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Underscore<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="underscore-1"><a name="user-content-underscore-1" href="#underscore-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Underscore 1</h2>
+<p>Argumentos:</p>
+<ul>
+<li>El template en forato string</li>
+<li>Los demas argumentos son opcionales. En caso de no pasarle mas argumentos, el template nos devolvera una funcion y ya mas tarde se instanciara. (Esto forma parte de la programacion funcional. <strong>Mirar Haskell Curry</strong>)</li>
+</ul>
+<h2 id="underscore-2"><a name="user-content-underscore-2" href="#underscore-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Underscore 2</h2>
+<p>Diferencias:</p>
+<ul>
+<li><strong>&lt;% &hellip; %&gt;</strong> <img align="absmiddle" alt="arrow_right" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_right.png" title="arrow_right" width="20px" /> Solamente evalua en JavaScript </li>
+<li><strong>&lt;%= &hellip; %&gt;</strong> <img align="absmiddle" alt="arrow_right" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_right.png" title="arrow_right" width="20px" /> Se evalua lo que esta dentro como codigo JavaScript y el resultado se interpola.</li>
+<li><strong>&lt;%- &hellip; %&gt;</strong> <img align="absmiddle" alt="arrow_right" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_right.png" title="arrow_right" width="20px" /> Igual que el de arriba pero ademas se pasa un filtro para escapar los caracteres especiales que puedan interferir con el lenguaje HTML.</li>
+</ul>
+<h2 id="underscore-3"><a name="user-content-underscore-3" href="#underscore-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Underscore 3</h2>
+<div class="codehilite"><pre>_.templateSettings = {
+interpolate: /\{\{=.*?\}\}/gim,
+evaluate: /\{\{.*?\}\}/gim
+escape: /\{\{-.*?\}\}/gim
+}
+</pre></div>
+
+
+<h1 id="local-storage"><a name="user-content-local-storage" href="#local-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="local-storage-1"><a name="user-content-local-storage-1" href="#local-storage-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage 1</h2>
+<p>La mejor forma de entender por qué es necesario el localStorage es indicando los tres grandes problemas de las cookies:</p>
+<ol>
+<li>Espacio limitado: Una cookie sólo puede ocupar 4kb de espacio. Es por eso que las cookies suelen utilizarse sólo para almacenar un hash o un identificador que será utilizado por el servidor para identificar la visita.</li>
+<li>
+<p>Cada vez que se realiza una petición al servidor, toda la información que está almacenada en las cookies es enviada y también es recibida nuevamente con la respuesta del servidor. O sea, en los intercambios de información entre el navegador web y el servidor siempre van pegadas las cookies.</p>
+</li>
+<li>
+<p>Las cookies tienen una caducidad.<br />
+Y aquí viene localStorage a solucionarlos la vida!</p>
+</li>
+<li>
+<p>Espacio menos limitado: localStorage puede ocupar entre 5 y 10MB dependiendo del navegador web. Con 5 o 10 megas ya podemos tener algo más de información </p>
+</li>
+<li>
+<p>La información almacenada con localStorage no es enviada al servidor en cada petición.<br />
+No existe una caducidad para localStorage, la información quedará almacenada hasta que se elimine expresamente. Aunque se cierre el navegador.</p>
+</li>
+</ol>
+<p>Lo sé, una cookie tiene caducidad, pero le puedes poner que caduque dentro de 5 años… vale, sí… pero caduca, con localStorage nos olvidamos de tener que guardar la cookie aumentando el tiempo de caducidad.</p>
+<h2 id="local-storage-2"><a name="user-content-local-storage-2" href="#local-storage-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage 2</h2>
+<p>Sin embargo, que la información persista en el tiempo, no siempre es una buena idea. A veces lo que interesa es que la información se elimina una vez se cierre el navegador. Para estos casos, en vez de utilizar localStorage, se debe usar sessionStorage.</p>
+<p>El sessionStorage es exactamente igual que localStorage, pero con la salvedad de que una vez cerrado el navegador se pierde la información, todo lo demás es lo mismo. Si se quiere trabajar con sessionStorage, sólo hay que coger todo el código de este artículo y donde pone localStorage cambiarlo por sessionStorage.</p>
+<h2 id="local-storage-3"><a name="user-content-local-storage-3" href="#local-storage-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage 3</h2>
+<ol>
+<li>Siguiendo estas reglas, un navegador web permite que scripts contenidos en una página acceda a datos en otra, pero sólo si ambas comparten el mismo origen. Un origen se define como la combinación del esquema URI, el nombre de dominio y número de puerto.</li>
+<li>El acceso a los datos almacenados en el navegador, tales como los del localStorage, se encuentra separado por origen. Cada origen tiene su propio almacenamiento individual, y el JavaScript en un origen no puede leer o escribir en el espacio de otro origen.</li>
+</ol>
+<h2 id="local-storage-4"><a name="user-content-local-storage-4" href="#local-storage-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage 4</h2>
+<ol>
+<li>localStorage.setItem(‘chuchu’, chuchu)</li>
+<li>var chuchu = localStorage.getItem(‘chuchu’)</li>
+</ol>
+<h2 id="local-storage-5"><a name="user-content-local-storage-5" href="#local-storage-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Storage 5</h2>
+<p>localStorage.removeItem(‘chuchu’)</p>
+<h1 id="heroku"><a name="user-content-heroku" href="#heroku" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="heroku-1"><a name="user-content-heroku-1" href="#heroku-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 1</h2>
+<p><code>heroku login</code></p>
+<h2 id="heroku-2"><a name="user-content-heroku-2" href="#heroku-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 2</h2>
+<p><code>heroku create [&lt;nombre&gt;]</code><br />
+<code>heroku</code></p>
+<h2 id="heroku-3"><a name="user-content-heroku-3" href="#heroku-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 3</h2>
+<p><code>git push heroku master</code></p>
+<h2 id="heroku-4"><a name="user-content-heroku-4" href="#heroku-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 4</h2>
+<p><code>git push heroku tutu:master</code></p>
+<h2 id="heroku-5"><a name="user-content-heroku-5" href="#heroku-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 5</h2>
+<p><code>heroku open</code><br />
+<code>&lt;nombre&gt;.herokuapp.com</code></p>
+<h2 id="heroku-6"><a name="user-content-heroku-6" href="#heroku-6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 6</h2>
+<p><code>heroku logs</code></p>
+<h2 id="heroku-7"><a name="user-content-heroku-7" href="#heroku-7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 7</h2>
+<p>Procfile</p>
+<h2 id="heroku-8"><a name="user-content-heroku-8" href="#heroku-8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 8</h2>
+<p>package.json</p>
+<h2 id="heroku-9"><a name="user-content-heroku-9" href="#heroku-9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Heroku 9</h2>
+<p>Con foreman.<br />
+<code>foreman start</code></p>
+<h1 id="analisis-lexico"><a name="user-content-analisis-lexico" href="#analisis-lexico" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Analisis Lexico<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="analisis-lexico-1"><a name="user-content-analisis-lexico-1" href="#analisis-lexico-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Analisis Lexico 1</h2>
+<ol>
+<li>
+<p>Comprueba que el último índice no casado por la regex sea igual al siguiente casado por la misma regex sobre str; es decir, que desde el lugar lastIndex hasta el primero que case en str, no hay ningún elemento. <br> En caso de ser así, devuelve m (el array del matching), y en caso contrario, null. <br> <strong><em>ES DECIR:</em></strong> <br> Teniendo en cuenta que se ejecute todo el tiempo sobre el mismo str, devuelve el matching en caso de que justo el elemento siguiente case, si hay <strong>ALGO</strong> que no case, devuelve null. <br><strong>cadena: tuntu <br> regex = /tu/g <br>tu index: 0 // con exec <br>tu index: 3<br>tu index: 0 // con bexec<br>null</strong></p>
+</li>
+<li>
+<p><code>null</code> <br> <code>[ “DBBD”, “BB”, “D”, index: 7, input: “dBdXXXXDBBD” ]</code></p>
+</li>
+</ol>
+<h2 id="analisis-lexico-2"><a name="user-content-analisis-lexico-2" href="#analisis-lexico-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Analisis Lexico 2</h2>
+<ul>
+<li><code>var WHITES = /\s+/g;</code></li>
+<li><code>var ID = /[a-zA-Z_]\w*/g;</code></li>
+<li><code>var STRING = /('(\\.|[^'])*'|"(\\.|[^"])*")/g;</code></li>
+<li><code>var ONELINECOMMENT = /\/\/.*/g;</code></li>
+<li><code>var MULTIPLELINECOMMENT = /\/[*](.|\n)*?[*]\//g;</code></li>
+<li><code>var ONECHAROPERATORS = /([-+*\/=()&amp;|;:,&lt;&gt;{}[\]])/g;</code></li>
+</ul>
+<h1 id="conceptos-de-gramaticas"><a name="user-content-conceptos-de-gramaticas" href="#conceptos-de-gramaticas" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="conceptos-de-gramaticas-1"><a name="user-content-conceptos-de-gramaticas-1" href="#conceptos-de-gramaticas-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 1</h2>
+<p>$V_{i+1} = \{wv: w \in V_{i} \land v \in V\}$</p>
+<h2 id="conceptos-de-gramaticas-2"><a name="user-content-conceptos-de-gramaticas-2" href="#conceptos-de-gramaticas-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 2</h2>
+<p>Cuádrupla $G = (N,T,S,P)$ donde:</p>
+<ul>
+<li>N es un conjunto finito de símbolos no terminales (variables).</li>
+<li>T es un conjunto finito de símbolos terminales (constantes), disjunto con N.</li>
+<li>S es un símbolo distinguido de N, el símbolo inicial.</li>
+<li>P es un conjunto finito de reglas de producción, cada una de la forma:</li>
+</ul>
+<p>$(N \cup T)^\ast N(N \cup T)^\ast \to (N \cup T)^\ast$</p>
+<h2 id="conceptos-de-gramaticas-3"><a name="user-content-conceptos-de-gramaticas-3" href="#conceptos-de-gramaticas-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 3</h2>
+<p>Sea $G = (N,T,P,S)$ una gramática, y sean α, β, δ, φ, ρ, &hellip; palabras de $\sum^\ast$ . Entonces:</p>
+<ul>
+<li>
+<p>β se deriva de α en un paso de derivación, y lo denotamos con $α \Rightarrow β$ si existen dos cadenas $\Phi_1, \Phi_2 \in \sum^\ast$, y una producción δ → ρ tales que $α = \Phi_1 δ \Phi_2$ , y $β = \Phi_1 ρ \Phi_2$</p>
+</li>
+<li>
+<p>Notamos con $\Rightarrow^\ast$ al cierre reflexivo y transitivo de $\Rightarrow$. Es decir $α \Rightarrow^\ast β$ denota a una secuencia de derivaciones en un número finito de pasos desde α hasta β.</p>
+</li>
+<li>
+<p>$x \in \sum^\ast$ es una forma sentencial de $G$, si puede obtenerse la siguiente secuencia de derivaciones $S \Rightarrow^\ast x$ . En el caso particular de que $x \in T^\ast$ se dice que x es una sentencia</p>
+</li>
+<li>
+<p>Se denomina lenguaje formal generado por G al conjunto<br />
+$L(G) = \{ x \in T^\ast | S \Rightarrow^\ast x\}$</p>
+</li>
+</ul>
+<h2 id="conceptos-de-gramaticas-4"><a name="user-content-conceptos-de-gramaticas-4" href="#conceptos-de-gramaticas-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 4</h2>
+<p>Según el tipo de Gramática se generará un lenguaje distinto:</p>
+<ul>
+<li>Lenguajes Recursivamente Enumerables:$P = { (u \to v) | u = xAy; u \in \sum^+; v,x,y \in \sum^\ast; A \in N}$</li>
+<li>Lenguajes Dependientes del Contexto: $P = \{ (S \to \lambda) o (xAy \to xvy) | v \in \sum^+ ; x,y \in \sum^\ast ; A \in N\}$</li>
+<li>Lenguajes Independientes del Contexto:$P = \{ (S \to \lambda) o (A \to v) | v \in \sum^+; A \in N\}$</li>
+<li>Lenguajes Regulares:<ul>
+<li>Lineales por la derecha: $P = \{ (S \to \lambda) o (A \to aB) o (A \to a) | a \in T; A,B \in N\}$</li>
+<li>Lineales por la izquierda: $P = \{ (S \to \lambda) o (A \to Ba) o (A \to a) | a \in T; A,B \in N\}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="conceptos-de-gramaticas-5"><a name="user-content-conceptos-de-gramaticas-5" href="#conceptos-de-gramaticas-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 5</h2>
+<p>Estructura jerárquica donde donde partiendo de la raíz, los hijos de cada nodo son posibles derivaciones de la gramática.</p>
+<h2 id="conceptos-de-gramaticas-6"><a name="user-content-conceptos-de-gramaticas-6" href="#conceptos-de-gramaticas-6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 6</h2>
+<h2 id="conceptos-de-gramaticas-7"><a name="user-content-conceptos-de-gramaticas-7" href="#conceptos-de-gramaticas-7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 7</h2>
+<h2 id="conceptos-de-gramaticas-8"><a name="user-content-conceptos-de-gramaticas-8" href="#conceptos-de-gramaticas-8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 8</h2>
+<h2 id="conceptos-de-gramaticas-9"><a name="user-content-conceptos-de-gramaticas-9" href="#conceptos-de-gramaticas-9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conceptos de Gramaticas 9</h2>
+<h1 id="analisis-descendente-predictivo"><a name="user-content-analisis-descendente-predictivo" href="#analisis-descendente-predictivo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Analisis Descendente Predictivo<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="adp-1"><a name="user-content-adp-1" href="#adp-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ADP 1</h2>
+<div class="codehilite"><pre>expression = -&gt;
+    result = term()
+    while lookahead and lookahead.type is &quot;ADDOP&quot;
+        type = lookahead.value
+        match &quot;ADDOP&quot;
+        right = expression()
+        result =
+            type: &quot;ADDOP&quot;
+            left: result
+            right: right
+    result
+</pre></div>
+
+
+<h2 id="adp-2"><a name="user-content-adp-2" href="#adp-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ADP 2</h2>
+<div class="codehilite"><pre>statement = -&gt;
+    result = null
+    if lookahead and lookahead.type is &quot;ID&quot;
+        left =
+            type: &quot;ID&quot;
+            value: lookahead.value
+        match &quot;ID&quot;
+        match &quot;=&quot;
+        right = expression()
+        result =
+            type: &quot;=&quot;
+            left: left
+            right: right
+    else if lookahead and lookahead.type is &quot;P&quot;
+        match &quot;P&quot;
+        right = expression()
+        result =
+            type: &quot;P&quot;
+            value: right
+    else if lookahead and lookahead.type is &quot;IF&quot;
+        match &quot;IF&quot;
+        left = condition()
+        match &quot;THEN&quot;
+        right = statement()
+        result =
+            type: &quot;IF&quot;
+            left: left
+            right: right
+    else # Error!
+        throw &quot;Syntax Error. Expected identifier but found &quot; +
+            (if lookahead then lookahead.value else &quot;end of input&quot;) +
+            &quot; near &#39;#{input.substr(lookahead.from)}&#39;&quot;
+    result
+</pre></div>
+
+
+<h2 id="adp-3"><a name="user-content-adp-3" href="#adp-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ADP 3</h2>
+<div class="codehilite"><pre>condition = -&gt;
+    left = expression()
+    type = lookahead.value
+    match &quot;COMPARISON&quot;
+    right = expression()
+    result =
+        type: type
+        left: left
+        right: right
+        result
+</pre></div>
+
+
+<h1 id="coffeescript"><a name="user-content-coffeescript" href="#coffeescript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CoffeeScript<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="coffee-1"><a name="user-content-coffee-1" href="#coffee-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 1</h2>
+<div class="codehilite"><pre>fact = (x) -&gt;
+    return 1 if x &lt;= 1
+    x * fact x - 1
+
+alert fact(5)
+</pre></div>
+
+
+<h2 id="coffee-2"><a name="user-content-coffee-2" href="#coffee-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 2</h2>
+<div class="codehilite"><pre>container = &quot;bucket&quot;
+liquid = &quot;wine&quot;
+x = &quot;Filling the #{container} with #{liquid}&quot;
+</pre></div>
+
+
+<h2 id="coffee-3"><a name="user-content-coffee-3" href="#coffee-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 3</h2>
+<p><div class="codehilite"><pre>outer = 1
+changeNumbers = -&gt;
+    inner = -1
+    outer = 10
+inner = changeNumbers()
+</pre></div>
+<br />
+<strong>=</strong><br />
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">changeNumbers</span><span class="p">,</span> <span class="nx">inner</span><span class="p">,</span> <span class="nx">outer</span><span class="p">;</span>
+
+<span class="nx">outer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">changeNumbers</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">inner</span><span class="p">;</span>
+  <span class="nx">inner</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">outer</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">inner</span> <span class="o">=</span> <span class="nx">changeNumbers</span><span class="p">();</span>
+</pre></div>
+</p>
+<h2 id="coffee-4"><a name="user-content-coffee-4" href="#coffee-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 4</h2>
+<p>El (n&hellip;) significa que tendremos un numero aleatorio de argumentos que se almacenaran en un array. En este caso la funcion retornara un array con todos los argumentos que se le pasemos.<br />
+<div class="codehilite"><pre><span class="k">[1, 2, 3]</span>
+<span class="k">[[1, 2, 3]]</span>
+<span class="err">[1,</span> <span class="err">2,</span> <span class="err">3](...</span> <span class="err">hace</span> <span class="err">que</span> <span class="err">se</span> <span class="err">trate</span> <span class="err">como</span> <span class="err">distintos</span> <span class="err">argumentos)</span>
+</pre></div>
+</p>
+<h2 id="coffee-5"><a name="user-content-coffee-5" href="#coffee-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 5</h2>
+<div class="codehilite"><pre>max is 10
+ida is 9
+tim is 11
+</pre></div>
+
+
+<div class="codehilite"><pre>((x)-&gt;x*x*x)(y) for y in [1..10] when y % 2 == 1
+f = (x)-&gt;x*x*x
+a = f(y) for y in [1..10] when y % 2 == 1
+alert(a)
+</pre></div>
+
+
+<h2 id="coffee-6"><a name="user-content-coffee-6" href="#coffee-6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Coffee 6</h2>
+<p>Funcion que suma los elementos del propio array. (:: se traduce como propotype). @reduce recibe como parametro una funcion y aplica esa funcion a los elementos del array.</p>
+<div class="codehilite"><pre>Array::sum = -&gt; @reduce ((a, b) -&gt; a + b)
+a = [1,2,3]
+alert(a.sum()) // 6
+</pre></div>
+
+
+<h1 id="jade"><a name="user-content-jade" href="#jade" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="jade-1"><a name="user-content-jade-1" href="#jade-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade 1</h2>
+<div class="codehilite"><pre>    #content
+        .block
+            input#bar.foo1.foo2
+</pre></div>
+
+
+<h2 id="jade-2"><a name="user-content-jade-2" href="#jade-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade 2</h2>
+<p>Hace que se interprete todo lo que esta indentado en p como parrafo.</p>
+<h2 id="jade-3"><a name="user-content-jade-3" href="#jade-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade 3</h2>
+<ul>
+<li><code>li=name</code> crea un li con todos los caracteres especiales escapados.</li>
+<li><code>li!=name</code> crea un li con los caraceteres especiales no escapados.</li>
+</ul>
+<h2 id="jade-4"><a name="user-content-jade-4" href="#jade-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade 4</h2>
+<p>El caso es el mismo que en el <a href="#jade-3">Ejercicio 3</a> con # se escapan los caracteres especiales y con ! no se escapan.</p>
+<h2 id="jade-5"><a name="user-content-jade-5" href="#jade-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jade 5</h2>
+<p><code>input(type='text' placeholder='hola')</code></p>
+<h1 id="mathjax"><a name="user-content-mathjax" href="#mathjax" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MathJax<a href="#indice"><img align="absmiddle" alt="arrow_up" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/arrow_up.png" title="arrow_up" width="20px" /></a></h1>
+<h2 id="mathjax-1"><a name="user-content-mathjax-1" href="#mathjax-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MathJax 1</h2>
+<div class="codehilite"><pre><span class="x">When </span><span class="p">$</span><span class="nv">a</span><span class="x"> \ne</span><span class="err">{</span><span class="x">} 0</span><span class="p">$</span><span class="x"> there are two solutions to </span><span class="p">$</span><span class="nv">ax</span><span class="x">^2+bx+c=0</span><span class="p">$</span><span class="x"> and they are </span><span class="p">$</span><span class="x"> x =</span><span class="err">{</span><span class="x"> -b\pm \sqrt</span><span class="err">{</span><span class="x">b^2-4ac} \over 2a}</span><span class="p">$</span><span class="x"></span>
+</pre></div></article></body></html>
